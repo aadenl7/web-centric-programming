@@ -27,6 +27,7 @@ header h1 {
 header nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -76,13 +77,12 @@ section:first-of-type {
     margin-bottom: 3.5rem;
 }
 
-/*need to fix the grid */
+/*need to fix the grid */   /*should be okay now*/
 section:nth-of-type(2) {
     display: grid;
-    
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; 
-    margin-top: 2rem; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 2rem;
     margin-bottom: 4rem;
 }
 
@@ -138,4 +138,64 @@ footer {
 footer a {
     color: #4fd1c5;
     text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+section:nth-of-type(2) {
+    grid-template-columns: 1fr; /* 1 column on tablet */
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    text-align: center;
+}
+
+}
+
+@media (max-width: 600px) {
+
+header {
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.3rem;
+}
+
+header nav ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+header nav a {
+    display: block;
+}
+
+.hero-image {
+    height: 200px;
+}
+
+main {
+    margin: -80px 1rem 2rem 1rem;
+    padding: 1.5rem;
+}
+
+figure img {
+    height: 220px;
+}
+
+footer {
+    padding: 1rem;
+}
+
 }
