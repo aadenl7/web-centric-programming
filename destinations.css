@@ -1,0 +1,133 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    color: #1f2933;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: #0b7285;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #334e68;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a:hover {
+    background-color: #0b7285;
+    color: #ffffff;
+}
+
+.hero-image {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+        url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 320px;
+}
+
+main {
+    max-width: 900px;
+    margin: -120px auto 3rem auto; 
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22);
+    position: relative; 
+    z-index: 5;
+}
+
+h2, h3 {
+    color: #0b7285;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+article {
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+article img {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover;
+    display: block;
+}
+
+article h3 {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    margin: 0;
+}
+
+article p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #334e68;
+}
+
+aside {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f0f4f8;
+    border-radius: 12px;
+    border-left: 6px solid #0b7285;
+}
+
+aside h3 {
+    margin-top: 0;
+}
+
+footer {
+    text-align: right;
+    padding: 1rem 3rem 1.5rem 3rem;
+    background-color: #0b1727;
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #4fd1c5;
+    text-decoration: none;
+}
