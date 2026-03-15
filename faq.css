@@ -27,6 +27,7 @@ header h1 {
 header nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -124,4 +125,60 @@ footer {
 footer a {
     color: #4fd1c5;
     text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    text-align: center;
+}
+
+}
+
+@media (max-width: 600px) {
+
+header {
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.3rem;
+}
+
+header nav ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+header nav a {
+    display: block;
+}
+
+.hero-image {
+    height: 200px;
+}
+
+main {
+    margin: -80px 1rem 2rem 1rem;
+    padding: 1.5rem;
+}
+
+section:nth-of-type(2) li {
+    padding: 1.2rem;
+}
+
+footer {
+    padding: 1rem;
+}
+
 }
