@@ -41,6 +41,11 @@ header nav a {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+header nav a:hover {
+    background-color: #0b7285;
+    color: #ffffff;
+}
+
 
 .hero-image {
     background-image:
