@@ -62,12 +62,22 @@
     </aside>
   </main>
 
+
   <footer>
     <p>&copy; 2026 Beyond Borders Travel</p>
     <p>Images courtesy of 
     <a href="https://unsplash.com">Unsplash</a> and 
     <a href="https://www.pexels.com">Pexels</a>.</p>
   </footer>
+  
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header nav");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+  
 </body>
 </html>
 
