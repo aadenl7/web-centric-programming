@@ -13,6 +13,7 @@
 <body>
   <header>
     <h1>Explore Beyond Borders</h1>
+    <button class ="menu-toggle">☰</button>button>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -74,6 +75,15 @@
     <a href="https://unsplash.com">Unsplash</a> and 
     <a href="https://www.pexels.com">Pexels</a>.</p>
   </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header nav");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>
 
