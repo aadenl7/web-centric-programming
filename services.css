@@ -137,3 +137,71 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+.menu-toggle { 
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+
+header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.reviews-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    text-align: center;
+}
+
+}
+
+@media (max-width: 600px) {
+
+header {
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.3rem;
+}
+
+header nav ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+header nav a {
+    display: block;
+}
+
+.hero-image {
+    height: 200px;
+}
+
+main {
+    margin: -80px 1rem 2rem 1rem;
+    padding: 1.5rem;
+}
+
+.reviews-grid {
+    grid-template-columns: 1fr; /* 1 column */
+}
+
+footer {
+    padding: 1rem;
+}
+
+}
