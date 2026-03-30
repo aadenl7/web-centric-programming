@@ -206,12 +206,16 @@
       const phone = document.getElementById("phone").value.trim();
       const postal = document.getElementById("postal").value.trim();
       const credit = document.getElementById("credit").value.trim();
+      const expiry = document.getElementById("expiry").value.trim();
+      const cvv = document.getElementById("cvv").value.trim();
 
       // REGEX
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
       const postalRegex = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
       const creditRegex = /^\d{16}$/;
+      const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+      const cvvRegex = /^\d{3}$/;
       const strongPassword = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
 
       // REQUIRED
@@ -257,10 +261,24 @@
         return;
       }
 
-      // CREDIT CARD
+      // CREDIT CARD NUMBER
       if (credit && !creditRegex.test(credit)) {
         event.preventDefault();
         errorMsg.textContent = "Credit card must be 16 digits.";
+        return;
+      }
+
+// EXPIRY DATE
+      if (expiry && !expiryRegex.test(expiry)) {
+        event.preventDefault();
+        errorMsg.textContent = "Expiry must be in MM/YY format.";
+        return;
+      }
+
+// CVV
+      if (cvv && !cvvRegex.test(cvv)) {
+        event.preventDefault();
+        errorMsg.textContent = "CVV must be 3 digits.";
         return;
       }
 
