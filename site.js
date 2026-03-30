@@ -286,3 +286,31 @@
     });
   }
 })();
+  
+  // Back to Top button
+  const backToTopBtn = document.createElement("button");
+  backToTopBtn.id = "backToTop";
+  backToTopBtn.innerHTML = "↑";
+  backToTopBtn.title = "Go to top";
+  document.body.appendChild(backToTopBtn);
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top function
+  backToTopBtn.addEventListener("click", function() {
+    tipStatus.textContent = "Preparing to scroll to top...";
+    
+    setTimeout(function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      tipStatus.textContent = "Scrolled to top!";
+    }, 200);
+  });
