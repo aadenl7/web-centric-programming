@@ -152,8 +152,6 @@ main section.interactive-tips.interactive-tips-sync #tipsList li {
     box-shadow: none;
 }
 
-/*ADDITIONAL SCROLL STYLES*/
-
 #backToTop {
     display: none; 
     position: fixed;
