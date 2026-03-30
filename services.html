@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="site-components.css">
 </head>
 
 <body>
@@ -54,6 +55,29 @@
       </p>
     </section>
 
+    <section class="interactive-tips interactive-tips-sync" id="tipsPanel" aria-labelledby="tips-heading">
+      <h3 id="tips-heading">Plan your trip</h3>
+      <p id="tripIntro">Click the buttons below to try DOM updates and events.</p>
+      <p id="liveClock" class="live-clock" aria-live="polite"></p>
+      <p class="tip-count-line">Tips in list: <span id="tipCount">1</span></p>
+      <ul id="tipsList">
+        <li>Book flexible fares when you can.</li>
+      </ul>
+      <div class="tips-actions">
+        <button type="button" id="addTipBtn">Add a tip</button>
+        <button type="button" id="removeLastTipBtn">Remove last tip</button>
+        <button type="button" id="shuffleTipsBtn">Shuffle order</button>
+        <button type="button" id="emphasizeIntroBtn">Emphasize intro (innerHTML)</button>
+        <button type="button" id="resetIntroBtn">Reset intro (textContent)</button>
+        <button type="button" id="togglePanelBtn">Toggle panel style</button>
+      </div>
+      <p class="demo-hint">Click any tip to pin/unpin. Double-click the section title for a message.</p>
+      <p id="tipStatus" class="tip-status" aria-live="polite"></p>
+      <p class="demo-link-wrap">
+        <a href="#" id="demoStayLink">Demo link — does not navigate</a>
+      </p>
+    </section>
+
     <aside>
       <h3>Service Benefits</h3>
       <ul>
@@ -71,12 +95,6 @@
     <a href="https://unsplash.com">Unsplash</a> and 
     <a href="https://www.pexels.com">Pexels</a>.</p>  </footer>
 
-  <script>
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("header nav");
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
