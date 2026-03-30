@@ -38,7 +38,7 @@
 
     <section>
       <h3>Send Us a Message</h3>
-      <form>
+      <form id ="travelForm">
         <p>
           <label for="name">Full Name:</label><br>
           <input type="text" id="name" name="name">
@@ -50,9 +50,31 @@
         </p>
 
         <p>
+          <label for="phone">Phone (123-456-7890):</label><br>
+          <input type="text" id="phone" name="phone">
+        </p>
+
+        <p>
+          <label for="postal">Postal Code (A1A 1A1):</label><br>
+          <input type="text" id="postal" name="postal">
+        </p>
+
+        <p>
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password">
+        </p>
+
+        <p>
+          <label for="confirmPassword">Confirm Password:</label><br>
+          <input type="password" id="confirmPassword" name="confirmPassword">
+        </p>
+
+        <p>
           <label for="message">Message:</label><br>
           <textarea id="message" name="message" rows="5"></textarea>
         </p>
+
+        <p id="errorMsg" style="color:red;"></p>
 
         <p>
           <input type="submit" value="Send Message">
