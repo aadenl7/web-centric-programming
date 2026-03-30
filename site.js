@@ -314,3 +314,59 @@
       tipStatus.textContent = "Scrolled to top!";
     }, 200);
   });
+
+
+  //  DESTINATION FILTER
+  const mainTag = document.querySelector("main");
+
+  if (mainTag) {
+    const filterSection = document.createElement("section");
+    filterSection.className = "injected-filter";
+    
+    filterSection.innerHTML = `
+      <h3 style="margin-top:0; color:#0b7285;">Quick Destination Finder</h3>
+      <p style="margin-bottom:0.5rem;">Where should you go next? Pick a vibe to search:</p>
+      <div class="filter-btn-group">
+        <button type="button" class="f-btn" data-cat="Beach">Tropical</button>
+        <button type="button" class="f-btn" data-cat="Adventure">Adventure</button>
+        <button type="button" class="f-btn" data-cat="Culture">Culture</button>
+      </div>
+      <div id="filterLoader" style="display: none;">Searching our compass...</div>
+      <div id="filterResult"><p style="margin:0; color:#627d98;">Select a category above.</p></div>
+    `;
+
+    mainTag.appendChild(filterSection);
+
+    const destData = {
+      Beach: { t: "The Maldives", d: "Pristine beaches and overwater bungalows." },
+      Adventure: { t: "Paris, France", d: "Experience romance, art, and history in the City of Light." },
+      Culture: { t: "Tokyo, Japan", d: "Vibrant city life, historic temples, and unique cuisine." }
+    };
+
+    filterSection.addEventListener("click", function(e) {
+      if (e.target.classList.contains("f-btn")) {
+        const cat = e.target.getAttribute("data-cat");
+        const loader = document.getElementById("filterLoader");
+        const result = document.getElementById("filterResult");
+
+        result.style.opacity = "0.3";
+        loader.style.display = "block";
+
+        setTimeout(function() {
+          loader.style.display = "none";
+          result.style.opacity = "1";
+          
+          result.innerHTML = `
+            <h4 style="margin:0; color:#0b1727;">${destData[cat].t}</h4>
+            <p style="margin:0.25rem 0 0;">${destData[cat].d}</p>
+          `;
+          
+          result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+          if (tipStatus) {
+            tipStatus.textContent = "Found the perfect " + cat + " trip for you!";
+          }
+        }, 750); 
+      }
+    });
+  }
