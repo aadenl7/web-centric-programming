@@ -187,4 +187,84 @@
       tipStatus.textContent = "preventDefault() stopped the link from changing the URL.";
     });
   }
+
+  
+  // FORM VALIDATION SECTION
+  
+
+  const form = document.getElementById("travelForm");
+
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      const errorMsg = document.getElementById("errorMsg");
+      errorMsg.textContent = "";
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const phone = document.getElementById("phone").value.trim();
+      const postal = document.getElementById("postal").value.trim();
+      const credit = document.getElementById("credit").value.trim();
+
+      // REGEX
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+      const postalRegex = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
+      const creditRegex = /^\d{16}$/;
+      const strongPassword = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+      // REQUIRED
+      if (!name || !email || !password || !confirmPassword) {
+        event.preventDefault();
+        errorMsg.textContent = "Please fill in all required fields.";
+        return;
+      }
+
+      // EMAIL
+      if (!emailRegex.test(email)) {
+        event.preventDefault();
+        errorMsg.textContent = "Invalid email format.";
+        return;
+      }
+
+      // PASSWORD STRENGTH
+      if (!strongPassword.test(password)) {
+        event.preventDefault();
+        errorMsg.textContent =
+          "Password must be 6+ characters, include 1 uppercase letter and 1 number.";
+        return;
+      }
+
+      // PASSWORD MATCH
+      if (password !== confirmPassword) {
+        event.preventDefault();
+        errorMsg.textContent = "Passwords do not match.";
+        return;
+      }
+
+      // PHONE
+      if (phone && !phoneRegex.test(phone)) {
+        event.preventDefault();
+        errorMsg.textContent = "Phone must be 123-456-7890.";
+        return;
+      }
+
+      // POSTAL
+      if (postal && !postalRegex.test(postal)) {
+        event.preventDefault();
+        errorMsg.textContent = "Postal code must be A1A 1A1.";
+        return;
+      }
+
+      // CREDIT CARD
+      if (credit && !creditRegex.test(credit)) {
+        event.preventDefault();
+        errorMsg.textContent = "Credit card must be 16 digits.";
+        return;
+      }
+
+      alert("Form submitted successfully!");
+    });
+  }
 })();
