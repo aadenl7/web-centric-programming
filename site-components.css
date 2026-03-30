@@ -152,6 +152,8 @@ main section.interactive-tips.interactive-tips-sync #tipsList li {
     box-shadow: none;
 }
 
+/*ADDITIONAL SCROLL STYLES*/
+
 #backToTop {
     display: none; 
     position: fixed;
@@ -177,4 +179,58 @@ main section.interactive-tips.interactive-tips-sync #tipsList li {
 
 html {
     scroll-behavior: smooth;
+}
+
+.injected-filter {
+    margin-top: 2rem;
+    padding: 1.5rem 1.75rem;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #d9e2ec;
+}
+
+.filter-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.filter-btn-group button {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #0b7285;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-btn-group button:hover {
+    background-color: #086972;
+}
+
+#filterLoader {
+    margin: 1rem 0;
+    color: #0b7285;
+    font-weight: bold;
+    font-style: italic;
+    animation: filter-pulse 1.5s infinite;
+}
+
+@keyframes filter-pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+#filterResult {
+    padding: 1rem;
+    background: #fff;
+    border-left: 4px solid #0b7285;
+    border-radius: 8px;
+    min-height: 50px;
+    transition: opacity 0.3s ease;
 }
